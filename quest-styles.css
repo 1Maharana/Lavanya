@@ -1,0 +1,1165 @@
+/* ==========================================================================
+   THE LAPTOP QUEST 💻
+   Art Direction: Soft 3D Cartoon / Animated Pixar-Style Interactive Story
+   Palette: Pastel Dreams, Fluffy Skies, Warm Sunset, Radiant Royal Gold
+   ========================================================================== */
+
+:root {
+  --font-display: 'Fredoka', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Pastel Dreamscape Palette */
+  --sky-dawn-top: #ffd3e2;
+  --sky-dawn-mid: #d7e3fc;
+  --sky-dawn-bot: #c3bef0;
+
+  --sky-struggle-top: #e0c3fc;
+  --sky-struggle-mid: #fbc2eb;
+  --sky-struggle-bot: #a1c4fd;
+
+  --sky-vinoy-top: #667eea;
+  --sky-vinoy-mid: #764ba2;
+  --sky-vinoy-bot: #fbc2eb;
+
+  --sky-golden-top: #ffeaa7;
+  --sky-golden-mid: #fab1a0;
+  --sky-golden-bot: #ff7675;
+
+  --color-cloud: #ffffff;
+  --color-cloud-shadow: rgba(160, 175, 215, 0.35);
+
+  --color-lavanya-pink: #ff758c;
+  --color-lavanya-lavender: #9d8df1;
+  --color-vinoy-gold: #ffbe0b;
+  --color-vinoy-royal: #5e17eb;
+
+  --color-text-main: #2d3748;
+  --color-text-sub: #4a5568;
+  --color-text-muted: #718096;
+
+  --shadow-cartoon-sm: 0 4px 0 rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06);
+  --shadow-cartoon-md: 0 8px 0 rgba(0, 0, 0, 0.1), 0 16px 30px rgba(0, 0, 0, 0.08);
+  --shadow-cartoon-lg: 0 12px 0 rgba(0, 0, 0, 0.12), 0 24px 45px rgba(0, 0, 0, 0.12);
+  --shadow-cartoon-glow: 0 0 40px rgba(255, 190, 11, 0.5);
+
+  --radius-pill: 9999px;
+  --radius-bubble: 28px;
+  --radius-card: 32px;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: #f7f9fc;
+  color: var(--color-text-main);
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  background: linear-gradient(180deg, 
+    var(--sky-dawn-top) 0%, 
+    var(--sky-dawn-mid) 20%, 
+    var(--sky-struggle-mid) 40%, 
+    var(--sky-vinoy-top) 65%, 
+    var(--sky-golden-mid) 90%, 
+    var(--sky-golden-top) 100%
+  );
+  overflow-x: hidden;
+  transition: background 1.5s ease;
+}
+
+/* Sound & Ambient Floating Bar */
+.ambient-top-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 0 rgba(200, 210, 230, 0.6), 0 12px 24px rgba(0, 0, 0, 0.06);
+  border: 2px solid #ffffff;
+}
+
+.quest-title-pill {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #5e17eb;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-divider {
+  width: 2px;
+  height: 18px;
+  background: #e2e8f0;
+}
+
+.quest-sound-btn {
+  background: #fff0f5;
+  border: 2px solid #ffccd5;
+  color: #ff4d6d;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.quest-sound-btn:hover {
+  transform: scale(1.06);
+  background: #ffe3e8;
+}
+
+.quest-sound-btn:active {
+  transform: scale(0.96);
+}
+
+/* Ambient Floating Clouds Background */
+.clouds-sky-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cloud-obj {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-pill);
+  filter: drop-shadow(0 15px 15px rgba(160, 180, 220, 0.25));
+  backdrop-filter: blur(4px);
+  animation: floatCloud linear infinite;
+}
+
+.cloud-obj::before,
+.cloud-obj::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud-1 {
+  width: 220px;
+  height: 70px;
+  top: 12%;
+  left: -250px;
+  animation-duration: 45s;
+}
+.cloud-1::before {
+  width: 90px;
+  height: 90px;
+  top: -45px;
+  left: 35px;
+}
+.cloud-1::after {
+  width: 70px;
+  height: 70px;
+  top: -30px;
+  right: 40px;
+}
+
+.cloud-2 {
+  width: 280px;
+  height: 85px;
+  top: 38%;
+  left: -320px;
+  animation-duration: 65s;
+  animation-delay: 8s;
+  opacity: 0.5;
+}
+.cloud-2::before {
+  width: 110px;
+  height: 110px;
+  top: -55px;
+  left: 45px;
+}
+.cloud-2::after {
+  width: 85px;
+  height: 85px;
+  top: -40px;
+  right: 55px;
+}
+
+.cloud-3 {
+  width: 190px;
+  height: 60px;
+  top: 75%;
+  left: -220px;
+  animation-duration: 50s;
+  animation-delay: 20s;
+  opacity: 0.6;
+}
+.cloud-3::before {
+  width: 75px;
+  height: 75px;
+  top: -35px;
+  left: 30px;
+}
+.cloud-3::after {
+  width: 60px;
+  height: 60px;
+  top: -25px;
+  right: 35px;
+}
+
+@keyframes floatCloud {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 400px)); }
+}
+
+/* Floating Magical Motes / Stars */
+.star-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.25rem;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.3) rotate(20deg); }
+}
+
+/* Common Story Scene Architecture */
+.story-scene {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scene-inner {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Playful Badges & Titles */
+.story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ff477e;
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-cartoon-sm);
+  margin-bottom: 24px;
+  transform-origin: center;
+  animation: gentleBob 3s ease-in-out infinite;
+}
+
+.quest-main-heading {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #2b2d42;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 0 rgba(255, 255, 255, 0.8);
+  letter-spacing: -0.01em;
+}
+
+.quest-main-heading .highlight-word {
+  background: linear-gradient(135deg, #ff477e, #ff85a1, #7209b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+
+.quest-subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #4a5568;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+/* Playful Cartoon 3D Buttons */
+.cartoon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #ff5e7e 0%, #ff99ac 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px 38px;
+  border-radius: var(--radius-pill);
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 0 #d93856, 0 16px 25px rgba(255, 94, 126, 0.4);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  user-select: none;
+}
+
+.cartoon-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 0 #d93856, 0 20px 30px rgba(255, 94, 126, 0.5);
+}
+
+.cartoon-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #d93856, 0 8px 15px rgba(255, 94, 126, 0.3);
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.cartoon-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   SCENE 1: The Dream (Opening Scene)
+   ========================================================================== */
+.scene-dream {
+  padding-top: 140px;
+}
+
+.character-stage {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fluffy Floating Island under Character */
+.floating-island {
+  position: absolute;
+  bottom: -20px;
+  width: 380px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 25px 40px rgba(160, 180, 230, 0.45), inset 0 -6px 12px rgba(220, 230, 250, 0.8);
+  border: 4px solid #f8faff;
+  z-index: 1;
+  animation: islandFloat 5s ease-in-out infinite;
+}
+
+/* Character SVG Illustration Container */
+.cartoon-avatar-wrap {
+  position: relative;
+  z-index: 5;
+  width: 340px;
+  height: 340px;
+  animation: characterHover 4s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(100, 120, 180, 0.2));
+}
+
+.cartoon-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Interactive Thought Bubble */
+.thought-bubble {
+  position: absolute;
+  top: -45px;
+  right: -25px;
+  z-index: 20;
+  background: #ffffff;
+  border: 4px solid #fff0f5;
+  border-radius: var(--radius-bubble);
+  padding: 16px 24px;
+  box-shadow: var(--shadow-cartoon-md);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ff477e;
+  max-width: 260px;
+  text-align: center;
+  animation: dreamBubble 3.5s ease-in-out infinite;
+  cursor: pointer;
+  user-select: none;
+}
+
+.thought-bubble:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Bubble Trail Dots */
+.thought-dot-1 {
+  position: absolute;
+  bottom: -16px;
+  left: 28px;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: var(--shadow-cartoon-sm);
+}
+.thought-dot-2 {
+  position: absolute;
+  bottom: -30px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: var(--shadow-cartoon-sm);
+}
+
+.bubble-laptop-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 4px;
+  animation: sparkleRotate 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   SCENE 2: The Struggle (Cartoon Office Chaos)
+   ========================================================================== */
+.scene-struggle {
+  position: relative;
+}
+
+.struggle-story-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.struggle-phrase {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(94, 23, 235, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 8px 32px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: popInBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.struggle-phrase:nth-child(1) { transform: rotate(-2deg); }
+.struggle-phrase:nth-child(2) { transform: rotate(1.5deg); }
+.struggle-phrase:nth-child(3) { transform: rotate(-1deg); }
+
+.struggle-climax-text {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fffb96;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+}
+
+/* Interactive Struggle Grid Cards */
+.struggle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.struggle-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-card);
+  padding: 30px 24px;
+  border: 4px solid #ffffff;
+  box-shadow: var(--shadow-cartoon-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.struggle-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-cartoon-lg);
+}
+
+.struggle-emoji-box {
+  width: 90px;
+  height: 90px;
+  background: #f0f4ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 18px;
+  border: 4px solid #ffffff;
+  box-shadow: var(--shadow-cartoon-sm);
+  position: relative;
+}
+
+.struggle-card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.struggle-card-desc {
+  font-size: 1rem;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Cartoon Cardboard Laptop Visual */
+.cardboard-badge {
+  background: #f4a261;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* Cartoon Flying Papers */
+.floating-paper {
+  position: absolute;
+  width: 32px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  pointer-events: none;
+}
+.paper-1 { top: 10px; left: 15px; animation: flutterPaper1 3s ease-in-out infinite; }
+.paper-2 { bottom: 20px; right: 20px; animation: flutterPaper2 3.5s ease-in-out infinite; }
+
+/* Giant Glowing Laptop Silhouette Showcase */
+.laptop-silhouette-box {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0;
+  padding: 40px 20px;
+  background: radial-gradient(circle, rgba(255, 230, 109, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.giant-laptop-silhouette {
+  width: 280px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 6px dashed #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.8), inset 0 0 30px rgba(255, 255, 255, 0.4);
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  backdrop-filter: blur(8px);
+}
+
+.laptop-silhouette-caption {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 18px;
+}
+
+/* ==========================================================================
+   SCENE 3: Enter Vinoy Sir (The Majestic Royal Realm)
+   ========================================================================== */
+.scene-vinoy {
+  position: relative;
+  color: #ffffff;
+}
+
+.scene-vinoy .quest-main-heading {
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scene-vinoy .quest-subtitle {
+  color: #f7fafc;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Vinoy Sir Royal Stage */
+.vinoy-royal-stage {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grand Cloud Throne Platform */
+.royal-cloud-throne {
+  position: absolute;
+  bottom: -30px;
+  width: 480px;
+  height: 90px;
+  background: linear-gradient(180deg, #ffffff 0%, #ede9fe 100%);
+  border-radius: 50%;
+  box-shadow: 0 30px 60px rgba(45, 10, 80, 0.5), inset 0 -10px 20px rgba(124, 58, 237, 0.2);
+  border: 5px solid #faf5ff;
+  z-index: 1;
+}
+
+/* Vinoy Sir Cartoon Character Wrap */
+.vinoy-avatar-wrap {
+  position: relative;
+  z-index: 10;
+  width: 380px;
+  height: 380px;
+  animation: royalHover 5s ease-in-out infinite;
+  filter: drop-shadow(0 20px 35px rgba(30, 0, 60, 0.4));
+}
+
+/* Floating Crown with Sparkles */
+.floating-crown-badge {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  font-size: 3.5rem;
+  animation: crownBob 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(255, 190, 11, 0.6));
+}
+
+/* The Sacred Floating Laptop between Lavanya and Vinoy Sir */
+.sacred-laptop-beam {
+  position: relative;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-bubble);
+  padding: 24px 36px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: gentleBob 4s ease-in-out infinite;
+}
+
+.sacred-laptop-icon {
+  font-size: 3.5rem;
+  animation: laptopGlowPulse 2s infinite alternate;
+}
+
+.sacred-laptop-text {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffe66d;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* ==========================================================================
+   SCENE 4: The Three Reasons (Floating Animated Cards)
+   ========================================================================== */
+.scene-reasons {
+  position: relative;
+}
+
+.reasons-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.floating-reason-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-card);
+  padding: 38px 28px;
+  border: 4px solid #ffffff;
+  box-shadow: var(--shadow-cartoon-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.floating-reason-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: var(--shadow-cartoon-lg);
+}
+
+.reason-card-1 { animation: cardFloat1 4.5s ease-in-out infinite; }
+.reason-card-2 { animation: cardFloat2 5s ease-in-out infinite 0.5s; }
+.reason-card-3 { animation: cardFloat3 4.8s ease-in-out infinite 1s; }
+
+.reason-icon-bubble {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  margin-bottom: 22px;
+  border: 5px solid #ffffff;
+  box-shadow: var(--shadow-cartoon-sm);
+}
+
+.bubble-pink { background: linear-gradient(135deg, #ffd1dc 0%, #ff9ebb 100%); }
+.bubble-purple { background: linear-gradient(135deg, #e3d5ff 0%, #b892ff 100%); }
+.bubble-gold { background: linear-gradient(135deg, #fff3b0 0%, #ffd166 100%); }
+
+.reason-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.reason-card-body {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SCENE 5: The Final Decision (The Magical Pedestal & The Two Buttons)
+   ========================================================================== */
+.scene-decision {
+  position: relative;
+  padding-bottom: 140px;
+}
+
+.decision-cinematic-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 5px solid #ffffff;
+  border-radius: 40px;
+  padding: 50px 40px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Interactive 3D WebGL / Canvas Laptop Pedestal Stage */
+.pedestal-stage {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 320px;
+  margin: 10px auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#laptopCanvas3D {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+#laptopCanvas3D:active {
+  cursor: grabbing;
+}
+
+.pedestal-light-cone {
+  position: absolute;
+  top: -40px;
+  width: 300px;
+  height: 340px;
+  background: radial-gradient(ellipse at top, rgba(255, 230, 109, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  animation: spotlightSway 6s ease-in-out infinite alternate;
+}
+
+/* Playful Decision Buttons Container */
+.decision-actions-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  min-height: 80px;
+}
+
+/* Big YES Button */
+.btn-quest-yes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #06d6a0 0%, #118ab2 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  padding: 20px 45px;
+  border-radius: var(--radius-pill);
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 0 #07797b, 0 20px 35px rgba(6, 214, 160, 0.5);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: pulseButton 2s infinite;
+}
+
+.btn-quest-yes:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 15px 0 #07797b, 0 25px 45px rgba(6, 214, 160, 0.6);
+}
+
+.btn-quest-yes:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #07797b, 0 10px 20px rgba(6, 214, 160, 0.3);
+}
+
+/* Playful "LET ME THINK..." Button */
+.btn-quest-think {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 18px 36px;
+  border-radius: var(--radius-pill);
+  border: 3px solid #cbd5e1;
+  box-shadow: 0 6px 0 #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-quest-think:hover {
+  background: #e2e8f0;
+  color: #334155;
+  transform: translateY(-2px);
+}
+
+.btn-quest-think:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #94a3b8;
+}
+
+/* ==========================================================================
+   MODALS: The Celebration & The Pleading "Think" Reaction
+   ========================================================================== */
+.quest-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(40, 20, 60, 0.6);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.quest-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quest-modal-card {
+  background: #ffffff;
+  border-radius: 40px;
+  padding: 45px 35px;
+  border: 6px solid #ffde59;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.quest-modal-overlay.active .quest-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Celebration Modal Specifics */
+.celebrate-badge {
+  background: linear-gradient(135deg, #ffd166, #ffbe0b);
+  color: #723b00;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 6px 20px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-cartoon-sm);
+}
+
+.celebrate-heading {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ff3366;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.celebrate-subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 24px;
+}
+
+/* Lavanya Celebrating Cartoon Graphic in Modal */
+.celebrating-lavanya-box {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 20px;
+  position: relative;
+  animation: happyJump 1s ease-in-out infinite;
+}
+
+/* Quest Royal Certificate */
+.quest-royal-certificate {
+  background: #fffdf5;
+  border: 4px dashed #ffbe0b;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: inset 0 0 15px rgba(255, 190, 11, 0.15);
+}
+
+.cert-proclamation-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #2b2d42;
+  line-height: 1.6;
+}
+
+.cert-proclamation-text strong {
+  color: #5e17eb;
+}
+
+.celebrate-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* "LET ME THINK..." Pleading Modal */
+.pleading-laptop-box {
+  font-size: 5.5rem;
+  margin-bottom: 14px;
+  animation: tremblePlea 1.2s ease-in-out infinite;
+}
+
+.think-modal-heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.think-modal-body {
+  font-size: 1.15rem;
+  color: #4a5568;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* Canvas Confetti */
+#questConfettiCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ==========================================================================
+   Animations Keyframes
+   ========================================================================== */
+@keyframes gentleBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes characterHover {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes islandFloat {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.04) translateY(4px); }
+}
+
+@keyframes dreamBubble {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.03); }
+}
+
+@keyframes sparkleRotate {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(15deg); }
+}
+
+@keyframes royalHover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes crownBob {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  50% { transform: translateX(-50%) translateY(-12px) rotate(-4deg); }
+}
+
+@keyframes laptopGlowPulse {
+  from { filter: drop-shadow(0 0 10px rgba(255, 230, 109, 0.4)); transform: scale(0.98); }
+  to { filter: drop-shadow(0 0 35px rgba(255, 230, 109, 0.9)); transform: scale(1.05); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
+  50% { transform: scale(1.05); box-shadow: 0 0 70px rgba(255, 255, 255, 0.95); }
+}
+
+@keyframes cardFloat1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes cardFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes cardFloat3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+@keyframes spotlightSway {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+@keyframes pulseButton {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes happyJump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-24px) scale(1.06); }
+}
+
+@keyframes tremblePlea {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes flutterPaper1 {
+  0%, 100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(-15px) rotate(-15deg); }
+}
+@keyframes flutterPaper2 {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-18px) rotate(20deg); }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+  .quest-main-heading { font-size: 2.75rem; }
+  .struggle-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .reasons-cards-container { grid-template-columns: 1fr; max-width: 480px; }
+  .vinoy-royal-stage { max-width: 440px; }
+  .vinoy-avatar-wrap { width: 300px; height: 300px; }
+  .royal-cloud-throne { width: 360px; height: 70px; }
+}
+
+@media (max-width: 600px) {
+  .ambient-top-nav { width: 92%; justify-content: space-between; }
+  .quest-title-pill { font-size: 0.8rem; }
+  .quest-main-heading { font-size: 2.15rem; }
+  .quest-subtitle { font-size: 1.1rem; }
+  .struggle-phrase { font-size: 1.5rem; padding: 6px 20px; }
+  .struggle-climax-text { font-size: 1.75rem; }
+  .btn-quest-yes { font-size: 1.15rem; padding: 16px 28px; width: 100%; }
+  .btn-quest-think { font-size: 1rem; padding: 14px 24px; width: 100%; }
+  .character-stage { max-width: 300px; }
+  .cartoon-avatar-wrap { width: 260px; height: 260px; }
+  .thought-bubble { font-size: 0.95rem; right: -10px; top: -35px; }
+}
+

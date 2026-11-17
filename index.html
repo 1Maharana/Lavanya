@@ -3,808 +3,498 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OPERATION: LAPTOP FOR LAVANYA 💻 | Official Request Portal</title>
-  <meta name="description" content="The Official Requisition and Executive Approval Portal for Manager Vinoy Sir. Lavanya needs a laptop.">
+  <title>THE LAPTOP QUEST 💻 | A Journey of One Employee, One Dream, One Laptop</title>
+  <meta name="description" content="An animated cartoon quest dedicated to Lavanya, addressed to the legendary Manager Vinoy Sir.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quest-styles.css">
 </head>
 <body>
 
-  <!-- Top Emergency Ticker -->
-  <div class="top-ticker" id="topTicker">
-    <div class="ticker-content">
-      <span class="ticker-badge">🚨 P0 INCIDENT</span>
-      <span class="ticker-text">HARDWARE CRISIS: Lavanya is operating on borrowed silicon. Productivity breach imminent. Vinoy Sir's urgent intervention requested.</span>
-      <span class="ticker-status">SLA: Expired 42 mins ago</span>
+  <!-- Ambient Top Floating Bar -->
+  <header class="ambient-top-nav">
+    <div class="quest-title-pill">
+      <span>✨ THE LAPTOP QUEST</span>
     </div>
-    <div class="ticker-actions">
-      <button class="sound-toggle-btn" id="soundToggle" title="Toggle Sound Effects">
-        <span id="soundIcon">🔊</span> <span id="soundLabel">Audio: ON</span>
-      </button>
-      <button class="quick-approve-pill" onclick="scrollToApproval()">
-        ⚡ Quick Approve
-      </button>
-    </div>
-  </div>
-
-  <!-- Header / Navigation -->
-  <header class="main-header">
-    <div class="header-container">
-      <div class="logo-group">
-        <div class="logo-icon-wrapper">
-          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-          <span class="pulse-dot"></span>
-        </div>
-        <div>
-          <div class="logo-title">CORP-REQ™ <span class="badge-version">v4.20-LAVANYA</span></div>
-          <div class="logo-subtitle">Enterprise Hardware Procurement System</div>
-        </div>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#dossier">The Request</a>
-        <a href="#reasons">Justifications</a>
-        <a href="#crisis">Crisis Telemetry</a>
-        <a href="#roi">Vinoy Sir ROI</a>
-        <a href="#decision" class="nav-cta">Executive Decision</a>
-      </nav>
-    </div>
+    <div class="nav-divider"></div>
+    <button class="quest-sound-btn" id="questSoundToggle" title="Toggle Magical Sound Effects">
+      <span id="questSoundIcon">🎵</span> <span id="questSoundLabel">Sound: ON</span>
+    </button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
-    <div class="hero-background-grid"></div>
-    <div class="hero-glow"></div>
-    
-    <div class="hero-container">
-      <div class="hero-text-col">
-        <div class="status-pill animate-fade-in">
-          <span class="pill-dot"></span>
-          <span>TICKET #VIN-LAPTOP-2026-FINAL-V3-ACTUAL-FINAL</span>
-        </div>
+  <!-- Ambient Floating Clouds Sky Layer -->
+  <div class="clouds-sky-layer">
+    <div class="cloud-obj cloud-1"></div>
+    <div class="cloud-obj cloud-2"></div>
+    <div class="cloud-obj cloud-3"></div>
 
-        <h1 class="hero-title animate-fade-up">
-          An Urgent Request That Could <span class="gradient-text">Change Everything.</span>
-        </h1>
-
-        <p class="hero-subtitle animate-fade-up-delay-1">
-          Respected <strong>Vinoy Sir</strong>, Lavanya needs a laptop. The entire future of departmental productivity depends upon your supreme executive decision.
-        </p>
-
-        <!-- Live Stat Badges -->
-        <div class="hero-stats-row animate-fade-up-delay-2">
-          <div class="stat-mini-card">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Laptops Owned</div>
-          </div>
-          <div class="stat-mini-card">
-            <div class="stat-number">999+</div>
-            <div class="stat-label">Ideas Waiting</div>
-          </div>
-          <div class="stat-mini-card highlight-card">
-            <div class="stat-number">1</div>
-            <div class="stat-label">Vinoy Sir Needed</div>
-          </div>
-        </div>
-
-        <!-- Action CTAs -->
-        <div class="hero-cta-group animate-fade-up-delay-3">
-          <a href="#dossier" class="btn btn-primary" onclick="playClickSound()">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            Review My Request
-          </a>
-          <button class="btn btn-emerald pulse-btn" onclick="scrollToApproval(); playClickSound();">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-            Fast-Track Approval ⚡
-          </button>
-        </div>
-
-        <div class="hero-footnote">
-          <span>🔒 End-to-End Encrypted Requisition</span> • <span>99.9% Sincerity SLA</span>
-        </div>
-      </div>
-
-      <!-- Animated Laptop Illustration Column -->
-      <div class="hero-visual-col animate-fade-in-right">
-        <div class="laptop-3d-wrapper" id="laptopStage">
-          <!-- Floating Status Chips -->
-          <div class="floating-chip chip-top-left float-anim-1">
-            <span class="chip-icon">🚨</span> RAM: Borrowed / 0 MB free
-          </div>
-          <div class="floating-chip chip-top-right float-anim-2">
-            <span class="chip-icon">⏳</span> Waiting on Vinoy Sir's Grace
-          </div>
-          <div class="floating-chip chip-bottom-left float-anim-3">
-            <span class="chip-icon">🔥</span> Coffee: Cold • Morale: Resilient
-          </div>
-
-          <!-- CSS 3D Animated Laptop -->
-          <div class="laptop-device" id="interactiveLaptop" onclick="handleLaptopClick()" title="Click to test hardware capability!">
-            <!-- Screen Lid -->
-            <div class="laptop-screen">
-              <div class="laptop-webcam"></div>
-              <div class="screen-display">
-                <div class="terminal-header">
-                  <div class="terminal-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                  </div>
-                  <div class="terminal-title">bash — lavanya@no-laptop: ~</div>
-                </div>
-                <div class="terminal-body" id="terminalOutput">
-                  <p class="term-line prompt">> init-workstation --user lavanya</p>
-                  <p class="term-line info">[OK] Loading talent & enthusiasm... 100%</p>
-                  <p class="term-line info">[OK] Loading dedication to the team... 100%</p>
-                  <p class="term-line warn">[WAIT] Scanning for assigned laptop hardware...</p>
-                  <p class="term-line error">❌ CRITICAL ERROR 404: Hardware Not Found!</p>
-                  <p class="term-line alert">⚠️ STATUS: Operating on borrowed time & generosity.</p>
-                  <p class="term-line action blink">> AWAITING MANAGER VINOY SIR's APPROVAL_</p>
-                </div>
-                <div class="screen-click-hint">
-                  <span>👉 Click screen to run diagnostic</span>
-                </div>
-              </div>
-            </div>
-            <!-- Laptop Hinge & Base -->
-            <div class="laptop-hinge"></div>
-            <div class="laptop-base">
-              <div class="keyboard-notch"></div>
-              <div class="trackpad"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live Colleague Alert Banner -->
-  <div class="colleague-alert-bar">
-    <div class="colleague-content">
-      <span class="colleague-emoji">👀</span>
-      <span class="colleague-text">
-        <strong>Office Gossip Wire:</strong> "Deepak just asked for his laptop back for a 2:00 PM meeting. Lavanya is currently taking notes in cursive on a napkin."
-      </span>
-      <button class="fix-btn" onclick="scrollToApproval()">Fix This For Lavanya</button>
-    </div>
+    <!-- Magical Star Motes -->
+    <div class="star-particle" style="top: 15%; left: 10%;">⭐</div>
+    <div class="star-particle" style="top: 28%; right: 12%; animation-delay: 1.2s;">✨</div>
+    <div class="star-particle" style="top: 55%; left: 8%; animation-delay: 2s;">🌸</div>
+    <div class="star-particle" style="top: 72%; right: 15%; animation-delay: 0.8s;">⭐</div>
+    <div class="star-particle" style="top: 88%; left: 14%; animation-delay: 1.5s;">✨</div>
   </div>
 
-  <!-- SECTION 2: The Official Request (ServiceNow / Jira Dossier) -->
-  <section class="section dossier-section" id="dossier">
-    <div class="section-container">
-      <div class="section-badge-center">
-        <span class="sec-badge">FORM RF-2026-EXECUTIVE-P0</span>
+  <!-- ======================================================================
+       SCENE 1: The Dream (Opening Scene)
+       ====================================================================== -->
+  <section class="story-scene scene-dream" id="dream">
+    <div class="scene-inner">
+      <div class="story-badge">
+        <span>☁️ CHAPTER 1: THE SPARK</span>
       </div>
-      <h2 class="section-heading text-center">The Official Request Dossier</h2>
-      <p class="section-subheading text-center">
-        Formally submitted into the high-priority managerial queue of Respected Vinoy Sir.
+
+      <h1 class="quest-main-heading">
+        Every Great Journey Begins With <span class="highlight-word">A Dream.</span>
+      </h1>
+
+      <p class="quest-subtitle">
+        Unfortunately, this journey is currently being delayed by the absence of one laptop.
       </p>
 
-      <div class="dossier-card">
-        <!-- Card Header with Stamps -->
-        <div class="dossier-header">
-          <div class="dossier-id-group">
-            <div class="dossier-tag">OFFICIAL REQUISITION RECORD</div>
-            <h3 class="dossier-ticket-id">TICKET #VIN-LAPTOP-001</h3>
-          </div>
-          <div class="dossier-stamps">
-            <div class="stamp-pending" id="dossierStamp">
-              <span>PENDING VINOY SIR'S BLESSING</span>
-            </div>
-          </div>
+      <!-- Center Cartoon Character: Lavanya Sitting at Desk Waiting -->
+      <div class="character-stage">
+        <!-- Floating Dream Island under Character -->
+        <div class="floating-island"></div>
+
+        <!-- Interactive Animated Thought Bubble -->
+        <div class="thought-bubble" id="thoughtBubble" title="Click to hear Lavanya's thoughts!">
+          <span class="bubble-laptop-icon">💻✨</span>
+          <span class="thought-quote-text">"One day... I will have my own laptop."</span>
+          <div class="thought-dot-1"></div>
+          <div class="thought-dot-2"></div>
         </div>
 
-        <!-- Key Meta Grid -->
-        <div class="dossier-meta-grid">
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="7" r="4"></circle><path d="M5.5 21a8.5 8.5 0 0 1 13 0"></path></svg>
-              Applicant
-            </div>
-            <div class="meta-value highlight-name">Lavanya</div>
-            <div class="meta-subtext">Senior Ambition Officer & Hardware-Less Prodigy</div>
-          </div>
+        <!-- Cute Cartoon Character: Lavanya -->
+        <div class="cartoon-avatar-wrap">
+          <svg class="cartoon-svg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow under desk -->
+            <ellipse cx="160" cy="290" rx="90" ry="14" fill="#a0b4d8" opacity="0.4" />
 
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              Requested From
-            </div>
-            <div class="meta-value manager-name">Manager Vinoy Sir</div>
-            <div class="meta-subtext">Supreme Approver & Corporate Lifesaver</div>
-          </div>
+            <!-- Wooden Pastel Desk -->
+            <rect x="80" y="220" width="160" height="14" rx="7" fill="#f4a261" stroke="#e76f51" stroke-width="3" />
+            <rect x="95" y="234" width="12" height="55" rx="5" fill="#e76f51" />
+            <rect x="213" y="234" width="12" height="55" rx="5" fill="#e76f51" />
 
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              Request Type
-            </div>
-            <div class="meta-value">Essential Work Infrastructure</div>
-            <div class="meta-subtext">Classification: Absolute Work Necessity</div>
-          </div>
+            <!-- Notebook on Desk with small pencil -->
+            <rect x="135" y="206" width="50" height="20" rx="3" fill="#ffffff" stroke="#9d8df1" stroke-width="2" />
+            <line x1="145" y1="212" x2="175" y2="212" stroke="#9d8df1" stroke-width="2" stroke-linecap="round" />
+            <line x1="145" y1="218" x2="168" y2="218" stroke="#ff758c" stroke-width="2" stroke-linecap="round" />
+            <rect x="190" y="212" width="22" height="5" rx="2" fill="#ffd166" transform="rotate(-15 190 212)" />
 
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-              Priority Level
-            </div>
-            <div class="meta-value priority-critical">
-              <span class="blinking-siren">🚨</span> CRITICAL
-            </div>
-            <div class="meta-subtext">Immediate Executive Action Required</div>
-          </div>
+            <!-- Lavanya's Body / Cute Lavender Hoodie -->
+            <path d="M110 240 C110 180, 210 180, 210 240 Z" fill="#9d8df1" stroke="#7b68ee" stroke-width="3" />
+            <ellipse cx="160" cy="210" rx="15" ry="20" fill="#f8f9fa" />
 
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              Requested Asset
-            </div>
-            <div class="meta-value asset-value">1 Laptop 💻</div>
-            <div class="meta-subtext">Spec: Fast enough to keep pace with Lavanya's brilliance</div>
-          </div>
+            <!-- Cute Cartoon Arms resting on desk with pencil -->
+            <ellipse cx="125" cy="225" rx="14" ry="10" fill="#9d8df1" />
+            <ellipse cx="195" cy="225" rx="14" ry="10" fill="#9d8df1" />
+            <circle cx="132" cy="228" r="7" fill="#ffd1dc" />
+            <circle cx="188" cy="228" r="7" fill="#ffd1dc" />
 
-          <div class="meta-item">
-            <div class="meta-label">
-              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-              Current Status
-            </div>
-            <div class="meta-value status-blessing">
-              <span class="pulse-amber"></span> Awaiting Vinoy Sir's Blessings 🙏
-            </div>
-            <div class="meta-subtext">Holding breath since this morning</div>
+            <!-- Lavanya's Head & Face -->
+            <circle cx="160" cy="145" r="44" fill="#ffe0bd" stroke="#f4a261" stroke-width="2.5" />
+
+            <!-- Rosy Cheeks -->
+            <ellipse cx="138" cy="155" rx="8" ry="5" fill="#ff758c" opacity="0.6" />
+            <ellipse cx="182" cy="155" rx="8" ry="5" fill="#ff758c" opacity="0.6" />
+
+            <!-- Big Starry Anime/Pixar Eyes (Looking up dreamily) -->
+            <g id="dreamEyes">
+              <!-- Left Eye -->
+              <ellipse cx="142" cy="140" rx="9" ry="12" fill="#2d3748" />
+              <circle cx="144" cy="136" r="4.5" fill="#ffffff" />
+              <circle cx="139" cy="144" r="2" fill="#ffffff" />
+
+              <!-- Right Eye -->
+              <ellipse cx="178" cy="140" rx="9" ry="12" fill="#2d3748" />
+              <circle cx="180" cy="136" r="4.5" fill="#ffffff" />
+              <circle cx="175" cy="144" r="2" fill="#ffffff" />
+
+              <!-- Cute Brows -->
+              <path d="M134 126 Q142 120 150 125" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round" fill="none" />
+              <path d="M170 125 Q178 120 186 126" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            </g>
+
+            <!-- Cute Sweet Smile -->
+            <path d="M154 158 Q160 164 166 158" stroke="#e76f51" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+            <!-- Hair (Cute Bun with stray curls) -->
+            <!-- Back Hair -->
+            <circle cx="160" cy="90" r="24" fill="#3a1c11" />
+            <circle cx="168" cy="85" r="6" fill="#ff758c" /> <!-- Cute Hair Scrunchie -->
+            <!-- Front Bangs -->
+            <path d="M120 135 C125 105, 195 105, 200 135 C185 115, 170 118, 160 120 C145 118, 135 115, 120 135 Z" fill="#3a1c11" />
+            <!-- Side Bangs -->
+            <path d="M120 135 Q115 160 122 175" stroke="#3a1c11" stroke-width="8" stroke-linecap="round" fill="none" />
+            <path d="M200 135 Q205 160 198 175" stroke="#3a1c11" stroke-width="8" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Action Button: Start the Quest -->
+      <button class="cartoon-btn" onclick="startQuest()">
+        <span>START THE QUEST</span>
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       SCENE 2: The Struggle (Cartoon Office Chaos)
+       ====================================================================== -->
+  <section class="story-scene scene-struggle" id="struggle">
+    <div class="scene-inner">
+      <div class="story-badge">
+        <span>⚡ CHAPTER 2: THE TRIAL</span>
+      </div>
+
+      <div class="struggle-story-flow">
+        <div class="struggle-phrase">"She has the skills."</div>
+        <div class="struggle-phrase">"She has the motivation."</div>
+        <div class="struggle-phrase">"She has the deadlines."</div>
+        <div class="struggle-climax-text">"But there is just ONE missing piece..."</div>
+      </div>
+
+      <!-- The Cartoon Struggle Visual Cards -->
+      <div class="struggle-grid">
+        <!-- Item 1: Cardboard Laptop -->
+        <div class="struggle-card">
+          <div class="struggle-emoji-box">
+            <span>📦</span>
+            <span class="floating-paper paper-1"></span>
           </div>
+          <h3 class="struggle-card-title">Imaginary Cardboard Laptop</h3>
+          <p class="struggle-card-desc">Handcrafted with love, brown tape, and crayon keys. Sadly, it does not connect to Wi-Fi.</p>
+          <span class="cardboard-badge">CPU: Pure Imagination</span>
         </div>
 
-        <!-- Executive Justification Summary Box -->
-        <div class="dossier-exec-box">
-          <div class="exec-box-header">
-            <span class="exec-badge">EXECUTIVE SUMMARY STATEMENT</span>
-            <span class="exec-timestamp">Filed: Today, 09:00 AM</span>
+        <!-- Item 2: Infinite Loading Screen -->
+        <div class="struggle-card">
+          <div class="struggle-emoji-box">
+            <span style="display:inline-block; animation: sparkleRotate 2s linear infinite;">⏳</span>
           </div>
-          <p class="exec-quote">
-            "Whereas Lavanya possesses 100% intellectual capacity, and whereas zero company laptops are currently allocated to her workstation, the department experiences a severe delta in output. Manager Vinoy Sir holds the ceremonial key to rectify this universal imbalance."
-          </p>
-          <div class="exec-signoff-preview">
-            <span>Approved by: <em>_________________________ (Vinoy Sir's Golden Signature Here)</em></span>
+          <h3 class="struggle-card-title">The Never-Ending Loader</h3>
+          <p class="struggle-card-desc">Waiting for borrowed resources to compile. Buffering at 99.9% since breakfast.</p>
+          <span class="cardboard-badge" style="background:#5e17eb;">Status: Perpetual Patience</span>
+        </div>
+
+        <!-- Item 3: Dramatic Ticking Clock -->
+        <div class="struggle-card">
+          <div class="struggle-emoji-box">
+            <span>⏰</span>
+            <span class="floating-paper paper-2"></span>
           </div>
+          <h3 class="struggle-card-title">Dramatic Clock Ticking</h3>
+          <p class="struggle-card-desc">Tick... tock... deadlines sprint like olympic athletes while hardware strolls in slow motion.</p>
+          <span class="cardboard-badge" style="background:#e63946;">Urgency: Maximum</span>
+        </div>
+      </div>
+
+      <!-- Giant Glowing Laptop Silhouette Showcase -->
+      <div class="laptop-silhouette-box">
+        <div class="giant-laptop-silhouette">
+          <span>💻</span>
+        </div>
+        <div class="laptop-silhouette-caption">
+          ✨ The Legend Foretells: A Golden Laptop Awaits Its True Owner...
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: Why Lavanya Needs a Laptop -->
-  <section class="section reasons-section" id="reasons">
-    <div class="section-container">
-      <div class="section-badge-center">
-        <span class="sec-badge">EMPIRICAL EVIDENCE</span>
+  <!-- ======================================================================
+       SCENE 3: Enter Vinoy Sir (The Majestic Royal Realm)
+       ====================================================================== -->
+  <section class="story-scene scene-vinoy" id="vinoy">
+    <div class="scene-inner">
+      <div class="story-badge" style="background: rgba(255, 230, 109, 0.95); color: #723b00;">
+        <span>👑 CHAPTER 3: THE MONARCH OF APPROVALS</span>
       </div>
-      <h2 class="section-heading text-center">Why Lavanya Needs a Laptop</h2>
-      <p class="section-subheading text-center">
-        Five undisputable, scientific, and peer-reviewed reasons that prove why laptop approval is the only logical path forward.
+
+      <h2 class="quest-main-heading">
+        Only One Person Can Change This Story.
+      </h2>
+
+      <p class="quest-subtitle">
+        The Keeper of Resources. The Guardian of Approvals. The Legendary <strong>Vinoy Sir</strong>.
       </p>
 
-      <div class="reasons-grid">
-        <!-- Reason 1 -->
-        <div class="reason-card" data-tilt>
-          <div class="reason-card-inner">
-            <div class="reason-header">
-              <div class="reason-icon-box bg-blue">
-                <span class="r-icon">🤝</span>
-              </div>
-              <span class="reason-number">01</span>
-            </div>
-            <h3 class="reason-title">Productivity is currently running on borrowed resources.</h3>
-            <p class="reason-desc">
-              Every task requires negotiating with innocent colleagues like a diplomat. "Can I borrow your Mac for 12 minutes?" is not an IT strategy, Sir!
-            </p>
-            <div class="reason-metric-pill">
-              <span class="metric-icon">📉</span>
-              <span>Colleague Suspicion Rate: <strong>+340%</strong></span>
-            </div>
-            <div class="reason-quote-footer">
-              "Colleagues are now hiding their chargers under locked drawers."
-            </div>
-          </div>
-        </div>
+      <!-- Majestic Royal Cartoon Character: Vinoy Sir -->
+      <div class="vinoy-royal-stage">
+        <!-- Floating Crown -->
+        <div class="floating-crown-badge">👑✨</div>
 
-        <!-- Reason 2 -->
-        <div class="reason-card" data-tilt>
-          <div class="reason-card-inner">
-            <div class="reason-header">
-              <div class="reason-icon-box bg-red">
-                <span class="r-icon">⚡</span>
-              </div>
-              <span class="reason-number">02</span>
-            </div>
-            <h3 class="reason-title">Deadlines are approaching faster than the laptop availability.</h3>
-            <p class="reason-desc">
-              Deadlines are sprinting at Usain Bolt speeds. Meanwhile, laptop procurement is moving at the pace of a sleeping turtle in a snowstorm.
-            </p>
-            <div class="reason-metric-pill">
-              <span class="metric-icon">⏰</span>
-              <span>Deadline Velocity: <strong>120 mph</strong> | Hardware: <strong>0 GHz</strong></span>
-            </div>
-            <div class="reason-quote-footer">
-              "Time waits for no one, especially not unapproved hardware tickets."
-            </div>
-          </div>
-        </div>
+        <!-- Grand Cloud Throne Platform -->
+        <div class="royal-cloud-throne"></div>
 
-        <!-- Reason 3 -->
-        <div class="reason-card" data-tilt>
-          <div class="reason-card-inner">
-            <div class="reason-header">
-              <div class="reason-icon-box bg-purple">
-                <span class="r-icon">🧠</span>
-              </div>
-              <span class="reason-number">03</span>
-            </div>
-            <h3 class="reason-title">Talent is ready, but hardware is not.</h3>
-            <p class="reason-desc">
-              The brainpower is primed to disrupt industries and automate workflows. But you can't run modern tech miracles on pure thoughts and good intentions.
-            </p>
-            <div class="reason-metric-pill">
-              <span class="metric-icon">🚀</span>
-              <span>Mental RAM: <strong>128 GB</strong> | Physical RAM: <strong>0 MB</strong></span>
-            </div>
-            <div class="reason-quote-footer">
-              "Like putting Formula 1 fuel into a pedal bicycle."
-            </div>
-          </div>
-        </div>
+        <!-- Cartoon SVG Character: Manager Vinoy Sir -->
+        <div class="vinoy-avatar-wrap">
+          <svg class="cartoon-svg" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Throne Backrest (Royal Velvet Purple & Gold Trim) -->
+            <path d="M90 280 C90 100, 250 100, 250 280 Z" fill="#5e17eb" stroke="#ffd166" stroke-width="6" />
+            <circle cx="170" cy="115" r="16" fill="#ffd166" />
+            <circle cx="170" cy="115" r="9" fill="#ff0055" />
 
-        <!-- Reason 4 -->
-        <div class="reason-card" data-tilt>
-          <div class="reason-card-inner">
-            <div class="reason-header">
-              <div class="reason-icon-box bg-gold">
-                <span class="r-icon">👑</span>
-              </div>
-              <span class="reason-number">04</span>
-            </div>
-            <h3 class="reason-title">Every great employee deserves a machine worthy of their potential.</h3>
-            <p class="reason-desc">
-              History remembers the visionary leaders who equipped their warriors with the finest swords. Vinoy Sir, be the leader history speaks of in awe.
-            </p>
-            <div class="reason-metric-pill">
-              <span class="metric-icon">⭐</span>
-              <span>Deserving Index: <strong>100 / 100</strong> (Audited)</span>
-            </div>
-            <div class="reason-quote-footer">
-              "Great machines build great champions. Vinoy Sir builds both."
-            </div>
-          </div>
-        </div>
+            <!-- Royal Crimson Cape with White Ermine Fur -->
+            <path d="M85 270 C85 180, 255 180, 255 270 Z" fill="#e63946" stroke="#b5179e" stroke-width="4" />
+            <path d="M125 180 Q170 195 215 180 Q210 205 170 205 Q130 205 125 180 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+            <!-- Little ermine spots -->
+            <circle cx="145" cy="192" r="2.5" fill="#2d3748" />
+            <circle cx="170" cy="196" r="2.5" fill="#2d3748" />
+            <circle cx="195" cy="192" r="2.5" fill="#2d3748" />
 
-        <!-- Reason 5 -->
-        <div class="reason-card featured-reason-card" data-tilt>
-          <div class="reason-card-inner">
-            <div class="reason-header">
-              <div class="reason-icon-box bg-emerald">
-                <span class="r-icon">🏗️</span>
-              </div>
-              <span class="reason-number">05</span>
-            </div>
-            <h3 class="reason-title">We cannot build the future on someone else's laptop.</h3>
-            <p class="reason-desc">
-              A profound corporate philosophical truth. What happens when the colleague whose laptop Lavanya is borrowing leaves for lunch at 1:00 PM? The future is paused!
-            </p>
-            <div class="reason-metric-pill">
-              <span class="metric-icon">🛑</span>
-              <span>Dependency Hazard: <strong>Critical (Owner wants to go home)</strong></span>
-            </div>
-            <div class="reason-quote-footer">
-              "True innovation requires sovereign hardware ownership."
-            </div>
-          </div>
+            <!-- Vinoy Sir's Executive Suit & Royal Medallion -->
+            <path d="M130 200 L210 200 L220 280 L120 280 Z" fill="#1e293b" />
+            <polygon points="170,215 155,275 170,285 185,275" fill="#ffd166" stroke="#ffbe0b" stroke-width="2" /> <!-- Golden Tie -->
+            <circle cx="170" cy="225" r="6" fill="#06d6a0" /> <!-- Emerald Executive Pin -->
+
+            <!-- Majestic Cartoon Hands holding the "Golden Approval Scepter" -->
+            <circle cx="115" cy="245" r="14" fill="#ffe0bd" stroke="#f4a261" stroke-width="2" />
+            <circle cx="225" cy="245" r="14" fill="#ffe0bd" stroke="#f4a261" stroke-width="2" />
+
+            <!-- Golden Approval Scepter / Fountain Pen -->
+            <line x1="225" y1="265" x2="255" y2="175" stroke="#ffd166" stroke-width="6" stroke-linecap="round" />
+            <polygon points="255,175 262,160 268,175" fill="#ffbe0b" />
+            <circle cx="262" cy="160" r="5" fill="#ffffff" /> <!-- Glowing Scepter Tip -->
+
+            <!-- Vinoy Sir's Head & Majestic Face -->
+            <circle cx="170" cy="150" r="46" fill="#ffe0bd" stroke="#f4a261" stroke-width="3" />
+
+            <!-- Stylish Executive Glasses / Cool Frames -->
+            <rect x="136" y="140" width="26" height="18" rx="6" fill="#ffffff" stroke="#2b2d42" stroke-width="3.5" opacity="0.9" />
+            <rect x="178" y="140" width="26" height="18" rx="6" fill="#ffffff" stroke="#2b2d42" stroke-width="3.5" opacity="0.9" />
+            <line x1="162" y1="148" x2="178" y2="148" stroke="#2b2d42" stroke-width="3.5" />
+
+            <!-- Wise Sparkling Eyes behind glasses -->
+            <circle cx="149" cy="149" r="4" fill="#1e293b" />
+            <circle cx="151" cy="147" r="1.5" fill="#ffffff" />
+            <circle cx="191" cy="149" r="4" fill="#1e293b" />
+            <circle cx="193" cy="147" r="1.5" fill="#ffffff" />
+
+            <!-- Distinguished Eyebrows -->
+            <path d="M136 132 Q148 126 160 130" stroke="#2b2d42" stroke-width="3" stroke-linecap="round" fill="none" />
+            <path d="M180 130 Q192 126 204 132" stroke="#2b2d42" stroke-width="3" stroke-linecap="round" fill="none" />
+
+            <!-- Warm, Confident & Benevolent Manager Smile -->
+            <path d="M156 172 Q170 182 184 172" stroke="#e76f51" stroke-width="3" stroke-linecap="round" fill="none" />
+
+            <!-- Dignified Hair & Neatly Styled Beard -->
+            <path d="M126 142 C120 115, 220 115, 214 142 C204 122, 185 125, 170 125 C155 125, 136 122, 126 142 Z" fill="#2d3748" />
+            <!-- Neat Beard Contour -->
+            <path d="M152 182 Q170 196 188 182" stroke="#2d3748" stroke-width="4" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Sacred Glowing Laptop Floating Between Lavanya and Vinoy Sir -->
+      <div class="sacred-laptop-beam">
+        <span class="sacred-laptop-icon">💻</span>
+        <div class="sacred-laptop-text">
+          "One signature from Vinoy Sir bridges the gap between dreams and reality."
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: Consequences of Not Approving (Exaggerated Warning Dashboard) -->
-  <section class="section crisis-section" id="crisis">
-    <div class="section-container">
-      <div class="crisis-banner-frame">
-        <div class="crisis-badge-wrapper">
-          <span class="crisis-pulsing-badge">⚠️ DEFCON 1: WORKPLACE ALERT</span>
-        </div>
-        <h2 class="section-heading text-center text-white">Consequences of Not Approving</h2>
-        <p class="section-subheading text-center text-slate-300">
-          Exaggerated real-time telemetry simulating what happens to department metrics if Vinoy Sir does not hit approve right now.
-        </p>
-
-        <!-- Warning Dashboard Metrics Grid -->
-        <div class="crisis-dashboard-grid">
-          <!-- Metric 1: Productivity -->
-          <div class="metric-card danger-card">
-            <div class="metric-card-top">
-              <span class="metric-name">Productivity</span>
-              <span class="metric-badge-red">CRITICAL DOWNTURN</span>
-            </div>
-            <div class="metric-big-number red-text" id="metricProd">12%</div>
-            <div class="progress-bar-bg">
-              <div class="progress-bar-fill fill-red" style="width: 12%;"></div>
-            </div>
-            <div class="metric-footer-note">
-              <span>Status:</span> <span>Down by 88% due to zero screens</span>
-            </div>
-          </div>
-
-          <!-- Metric 2: Motivation -->
-          <div class="metric-card warning-card">
-            <div class="metric-card-top">
-              <span class="metric-name">Motivation</span>
-              <span class="metric-badge-amber">STALLED</span>
-            </div>
-            <div class="metric-buffering-box">
-              <div class="funny-spinner"></div>
-              <div class="buffering-text">
-                <span class="buffering-label">Buffering...</span>
-                <span class="buffering-sub">[Loading will to continue: 99%]</span>
-              </div>
-            </div>
-            <div class="progress-bar-bg">
-              <div class="progress-bar-fill fill-amber progress-infinite"></div>
-            </div>
-            <div class="metric-footer-note">
-              <span>Estimated wait:</span> <span>Until Vinoy Sir clicks button</span>
-            </div>
-          </div>
-
-          <!-- Metric 3: Work Efficiency -->
-          <div class="metric-card danger-card">
-            <div class="metric-card-top">
-              <span class="metric-name">Work Efficiency</span>
-              <span class="metric-badge-red">SYSTEM EXCEPTION</span>
-            </div>
-            <div class="metric-big-text error-text">
-              <span class="glitch-text" data-text="Laptop not found.">Laptop not found.</span>
-            </div>
-            <div class="http-code-badge">HTTP 404: SILICON_ABSENT</div>
-            <div class="metric-footer-note">
-              <span>Root Cause:</span> <span>Physical device missing from desk</span>
-            </div>
-          </div>
-
-          <!-- Metric 4: Lavanya's Patience -->
-          <div class="metric-card emergency-card">
-            <div class="metric-card-top">
-              <span class="metric-name">Lavanya's Patience</span>
-              <span class="metric-badge-red blink">RED ALERT</span>
-            </div>
-            <div class="metric-big-number red-text" id="metricPatience">3%</div>
-            <div class="progress-bar-bg">
-              <div class="progress-bar-fill fill-red-emergency" style="width: 3%;"></div>
-            </div>
-            <div class="metric-footer-note text-emergency">
-              <span>Hazard Warning:</span> <span>Will soon ask Vinoy Sir directly in person!</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Real-Time Chaos Ticker -->
-        <div class="incident-log-card">
-          <div class="incident-header">
-            <span class="terminal-circle red"></span>
-            <span class="terminal-circle yellow"></span>
-            <span class="terminal-circle green"></span>
-            <span class="incident-title">LIVE INCIDENT STREAM: LAPTOPLESS_WORKER_LOG.TXT</span>
-            <span class="incident-live-tag">LIVE FEED</span>
-          </div>
-          <div class="incident-logs-body" id="incidentLogBody">
-            <div class="log-entry"><span class="log-time">[10:14 AM]</span> Lavanya stared intently at blank desk in hopes a MacBook Air would manifest via quantum tunneling. (Failed)</div>
-            <div class="log-entry"><span class="log-time">[11:30 AM]</span> Borrowed laptop battery reached 4%; colleague took charger to different floor. Tragic silence ensued.</div>
-            <div class="log-entry"><span class="log-time">[01:15 PM]</span> Attempted to run complex spreadsheet on iPhone calculator. Overheated phone.</div>
-            <div class="log-entry alert-log"><span class="log-time">[02:40 PM]</span> ⚠️ WARNING: Entire department's collective IQ bottlenecked by 1 missing power cord.</div>
-            <div class="log-entry highlight-log"><span class="log-time">[JUST NOW]</span> Vinoy Sir is currently reading this portal. Destiny hangs in the balance.</div>
-          </div>
-        </div>
-
-        <!-- Delay Simulation Button -->
-        <div class="crisis-interaction-bar">
-          <button class="btn btn-outline-danger" id="simulateDelayBtn" onclick="simulateDelay()">
-            ⚠️ Simulate 24-Hour Delay In Approval
-          </button>
-          <span class="delay-result-text" id="delayResultText"></span>
-        </div>
+  <!-- ======================================================================
+       SCENE 4: The Three Reasons (Floating Animated Cards)
+       ====================================================================== -->
+  <section class="story-scene scene-reasons" id="reasons">
+    <div class="scene-inner">
+      <div class="story-badge">
+        <span>📖 CHAPTER 4: THE THREE TRUTHS</span>
       </div>
-    </div>
-  </section>
 
-  <!-- SECTION 5: Return on Investment (ROI for Vinoy Sir) -->
-  <section class="section roi-section" id="roi">
-    <div class="section-container">
-      <div class="section-badge-center">
-        <span class="sec-badge">EXECUTIVE VALUE PROPOSITION</span>
-      </div>
-      <h2 class="section-heading text-center">Return on Investment for Vinoy Sir</h2>
-      <p class="section-subheading text-center">
-        Every rupee spent on this laptop pays 10,000x dividends in managerial glory, output, and peaceful hallways.
+      <h2 class="quest-main-heading">
+        Three Reasons For <span class="highlight-word">Greatness.</span>
+      </h2>
+
+      <p class="quest-subtitle">
+        Presented humbly for Manager Vinoy Sir's contemplation:
       </p>
 
-      <div class="roi-grid">
-        <!-- Benefit 1 -->
-        <div class="roi-card">
-          <div class="roi-icon-wrap">🚀</div>
-          <h3 class="roi-title">Increased Productivity</h3>
-          <p class="roi-desc">
-            Productivity skyrockets by <strong>+9,999%</strong>. Work will be produced at supersonic speeds, leaving other managers wondering what secret formula Vinoy Sir possesses.
-          </p>
-          <div class="roi-stat-tag">+9,999% Speed Multiplier</div>
-        </div>
-
-        <!-- Benefit 2 -->
-        <div class="roi-card">
-          <div class="roi-icon-wrap">⚡</div>
-          <h3 class="roi-title">Faster Task Completion</h3>
-          <p class="roi-desc">
-            Tasks will be completed before Vinoy Sir even finishes explaining them. Jira tickets will close themselves out of sheer respect for the new machine.
-          </p>
-          <div class="roi-stat-tag">Tasks Finished: Warp Speed</div>
-        </div>
-
-        <!-- Benefit 3 -->
-        <div class="roi-card">
-          <div class="roi-icon-wrap">😄</div>
-          <h3 class="roi-title">Happier Employee</h3>
-          <p class="roi-desc">
-            Zero sighs, zero despair. Lavanya will be the most cheerful employee in the office, constantly praising Vinoy Sir's unparalleled wisdom and management acumen.
-          </p>
-          <div class="roi-stat-tag">Joy Quotient: 100/100</div>
-        </div>
-
-        <!-- Benefit 4 -->
-        <div class="roi-card">
-          <div class="roi-icon-wrap">🕊️</div>
-          <h3 class="roi-title">Less Laptop Borrowing</h3>
-          <p class="roi-desc">
-            Deepak and adjacent colleagues can finally leave their laptops on their desks without nervous paranoia. Harmony and trust will be restored to the floor.
-          </p>
-          <div class="roi-stat-tag">Office Peace Index: Maximum</div>
-        </div>
-
-        <!-- Benefit 5 -->
-        <div class="roi-card featured-roi">
-          <div class="roi-icon-wrap">🏆</div>
-          <h3 class="roi-title">Improved Office Morale</h3>
-          <p class="roi-desc">
-            Vinoy Sir will be forever remembered as the manager who didn't let bureaucracy stand in the way of greatness. Executive legend status officially unlocked.
-          </p>
-          <div class="roi-stat-tag">Manager Rating: Legend of the Century</div>
-        </div>
-      </div>
-
-      <!-- Interactive Vinoy Sir Karma Calculator -->
-      <div class="karma-calc-box">
-        <div class="karma-calc-header">
-          <div>
-            <h4 class="karma-title">⚡ Interactive Vinoy Sir Karma & Glory Calculator</h4>
-            <p class="karma-sub">Adjust the slider to simulate Vinoy Sir's managerial greatness upon laptop approval.</p>
+      <!-- Three Floating Cartoon Cards -->
+      <div class="reasons-cards-container">
+        <!-- Card 1 -->
+        <div class="floating-reason-card reason-card-1">
+          <div class="reason-icon-bubble bubble-pink">
+            <span>🚀</span>
           </div>
-          <div class="karma-score-badge">
-            <span class="karma-score-label">MANAGER RATING</span>
-            <span class="karma-score-val" id="karmaScoreVal">100 / 10 ⭐</span>
-          </div>
+          <h3 class="reason-card-title">Productivity Unlocked</h3>
+          <p class="reason-card-body">
+            Give Lavanya a laptop and watch productivity take flight. Tasks will finish with warp speed and joyful velocity!
+          </p>
         </div>
 
-        <div class="slider-wrapper">
-          <input type="range" min="1" max="10" value="10" class="karma-slider" id="karmaSlider" oninput="updateKarma(this.value)">
-          <div class="slider-ticks">
-            <span>Great Manager</span>
-            <span>Exceptional Leader</span>
-            <span>Global Visionary</span>
-            <span>Hall of Fame Legend (Vinoy Sir)</span>
+        <!-- Card 2 -->
+        <div class="floating-reason-card reason-card-2">
+          <div class="reason-icon-bubble bubble-purple">
+            <span>⭐</span>
           </div>
+          <h3 class="reason-card-title">Dreams Deserve Hardware</h3>
+          <p class="reason-card-body">
+            Great talent deserves great tools. You wouldn't hand a master painter an empty stick; give the champion her machine!
+          </p>
         </div>
 
-        <div class="karma-feedback-banner" id="karmaFeedback">
-          "By approving 1 laptop, Vinoy Sir gains +5,000 Executive Karma Points and eternal gratitude from Lavanya!"
+        <!-- Card 3 -->
+        <div class="floating-reason-card reason-card-3">
+          <div class="reason-icon-bubble bubble-gold">
+            <span>🌱</span>
+          </div>
+          <h3 class="reason-card-title">The Future Is Loading</h3>
+          <p class="reason-card-body">
+            Let's make sure it doesn't load forever. Together, Vinoy Sir and Lavanya can build the next chapter today.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6: Final Approval Section (THE CLIMAX) -->
-  <section class="section approval-section" id="decision">
-    <div class="approval-glow-aura"></div>
-    <div class="section-container">
-      <div class="approval-box-wrapper">
-        <div class="approval-badge-top">
-          <span>FINAL EXECUTIVE SIGN-OFF PORTAL</span>
+  <!-- ======================================================================
+       SCENE 5: The Final Decision (The Magical Pedestal & The Two Buttons)
+       ====================================================================== -->
+  <section class="story-scene scene-decision" id="decision">
+    <div class="scene-inner">
+      <div class="decision-cinematic-box">
+        <div class="story-badge" style="background: #eef2ff; color: #4338ca;">
+          <span>🌟 THE FINAL SUMMONS</span>
         </div>
 
-        <h2 class="approval-main-heading">
-          Vinoy Sir, The Decision Is Yours.
+        <h2 class="quest-main-heading">
+          Vinoy Sir, Will You Make This Dream Come True?
         </h2>
 
-        <p class="approval-subheading">
-          The cursor is in your hand. History is being drafted right now. One single click transforms Lavanya's workday and cements your legacy as the most benevolent manager.
+        <p class="quest-subtitle" style="margin-bottom: 10px;">
+          The sacred laptop waits upon the pedestal. Click and drag to rotate it in 3D!
         </p>
 
-        <!-- Decision Box Action Buttons -->
-        <div class="decision-buttons-group">
-          <!-- Button 1: Approve -->
-          <button class="btn-approve" id="approveBtn" onclick="handleApprove()">
-            <div class="btn-approve-shimmer"></div>
-            <div class="btn-approve-content">
-              <span class="approve-icon">✅</span>
-              <div class="approve-text-group">
-                <span class="approve-main-text">APPROVE LAPTOP REQUEST</span>
-                <span class="approve-sub-text">Recommended by 10/10 Corporate Economists</span>
-              </div>
-            </div>
-            <span class="golden-badge">Instant Joy Guaranteed</span>
-          </button>
-
-          <!-- Button 2: I Need More Time -->
-          <div class="more-time-container" id="moreTimeContainer">
-            <button class="btn-more-time" id="moreTimeBtn" onclick="handleMoreTime()" onmouseenter="dodgeButton(event)">
-              <span class="more-time-icon">🤔</span>
-              <span class="more-time-text">I NEED MORE TIME</span>
-            </button>
-            <div class="dodge-counter" id="dodgeCounter"></div>
-          </div>
+        <!-- 3D WebGL / Canvas Laptop Pedestal Stage -->
+        <div class="pedestal-stage">
+          <div class="pedestal-light-cone"></div>
+          <canvas id="laptopCanvas3D"></canvas>
         </div>
 
-        <div class="approval-safety-note">
-          <span>🛡️ 100% Risk-Free Decision</span> • <span>No fine print</span> • <span>Immediate high-fives guaranteed</span>
+        <!-- The Two Big Playful Decision Buttons -->
+        <div class="decision-actions-row">
+          <!-- Button 1: YES -->
+          <button class="btn-quest-yes" onclick="handleQuestYes()">
+            <span>YES! GIVE LAVANYA HER LAPTOP 💻</span>
+          </button>
+
+          <!-- Button 2: LET ME THINK -->
+          <button class="btn-quest-think" onclick="handleQuestThink()">
+            <span>LET ME THINK... 🤔</span>
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="main-footer">
-    <div class="footer-container">
-      <div class="footer-top-row">
-        <div class="footer-logo">
-          <strong>OPERATION: LAPTOP FOR LAVANYA 💻</strong>
-          <p class="footer-tagline">The Official Request Portal to Manager Vinoy Sir</p>
-        </div>
-        <div class="footer-compliance-badges">
-          <span class="compliance-badge">ISO-9001 (Pending Laptop)</span>
-          <span class="compliance-badge">SOC-2 Emotional Stability Certified</span>
-          <span class="compliance-badge">100% Genuine Workplace Humor</span>
-        </div>
+  <!-- ======================================================================
+       MODAL 1: The Grand Celebration (On YES!)
+       ====================================================================== -->
+  <div class="quest-modal-overlay" id="questCelebrationModal">
+    <div class="quest-modal-card">
+      <div class="celebrate-badge">🎉 QUEST COMPLETED 🎉</div>
+
+      <h2 class="celebrate-heading">THE QUEST IS COMPLETE!</h2>
+      <p class="celebrate-subheading">Vinoy Sir has officially become a legend.</p>
+
+      <!-- Cartoon Celebrating Lavanya (Vector SVG) -->
+      <div class="celebrating-lavanya-box">
+        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sparkles & Hearts around Lavanya -->
+          <circle cx="35" cy="50" r="10" fill="#ffbe0b" />
+          <circle cx="205" cy="45" r="8" fill="#ff0055" />
+          <path d="M40 180 Q45 165 55 175 Q65 185 55 195 Z" fill="#06d6a0" />
+          <path d="M195 170 Q205 160 215 170 Q215 185 200 185 Z" fill="#ff758c" />
+
+          <!-- Leaping Body -->
+          <path d="M85 210 C85 150, 155 150, 155 210 Z" fill="#9d8df1" stroke="#7b68ee" stroke-width="3" />
+
+          <!-- Arms raised holding the Shiny Laptop -->
+          <path d="M85 180 Q60 120 95 105" stroke="#9d8df1" stroke-width="12" stroke-linecap="round" fill="none" />
+          <path d="M155 180 Q180 120 145 105" stroke="#9d8df1" stroke-width="12" stroke-linecap="round" fill="none" />
+
+          <!-- The Shiny Laptop in Hands -->
+          <rect x="85" y="80" width="70" height="42" rx="6" fill="#ffd166" stroke="#ffbe0b" stroke-width="3" />
+          <rect x="92" y="86" width="56" height="30" rx="3" fill="#38bdf8" />
+          <circle cx="120" cy="101" r="6" fill="#ffffff" /> <!-- Glowing Apple / Heart icon -->
+
+          <!-- Head & Ecstatic Face -->
+          <circle cx="120" cy="140" r="34" fill="#ffe0bd" stroke="#f4a261" stroke-width="2.5" />
+          <ellipse cx="102" cy="148" rx="7" ry="4" fill="#ff758c" opacity="0.7" />
+          <ellipse cx="138" cy="148" rx="7" ry="4" fill="#ff758c" opacity="0.7" />
+
+          <!-- Heart Eyes of Pure Joy (😍) -->
+          <path d="M100 138 C96 132, 108 132, 104 138 L104 142 L100 138 Z" fill="#ff0055" />
+          <path d="M136 138 C132 132, 144 132, 140 138 L140 142 L136 138 Z" fill="#ff0055" />
+
+          <!-- Huge Open Laughing Mouth -->
+          <path d="M112 150 Q120 162 128 150 Z" fill="#d90429" stroke="#9b2226" stroke-width="1.5" />
+
+          <!-- Cute Bun Hair -->
+          <circle cx="120" cy="98" r="18" fill="#3a1c11" />
+          <path d="M88 130 C95 105, 145 105, 152 130 Z" fill="#3a1c11" />
+        </svg>
       </div>
 
-      <div class="footer-divider"></div>
-
-      <div class="footer-bottom-row">
-        <p class="footer-main-quote">
-          "Made with hope, ambition, and absolutely zero laptops."
+      <!-- Royal Proclamation Certificate -->
+      <div class="quest-royal-certificate">
+        <p class="cert-proclamation-text">
+          "Be it known across the land that by the benevolent wisdom of <strong>Manager Vinoy Sir</strong>, Lavanya is hereby decreed the rightful owner of a high-performance laptop! May productivity soar to unprecedented heights!"
         </p>
-        <p class="footer-disclaimer">
-          Disclaimer: This portal is a lighthearted, playful, and affectionate tribute to Manager Vinoy Sir's leadership. No managers were stressed, and no colleague laptops were permanently damaged during this requisition.
-        </p>
-        <div class="footer-copyright">
-          © 2026 Lavanya Requisition Committee • Dedicated to Vinoy Sir
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- MODAL: Celebration / Approval Modal -->
-  <div class="modal-overlay" id="celebrationModal">
-    <div class="modal-backdrop" onclick="closeCelebrationModal()"></div>
-    <div class="modal-card celebration-card">
-      <button class="modal-close-x" onclick="closeCelebrationModal()">✕</button>
-      
-      <div class="breaking-news-header">
-        <span class="breaking-dot"></span>
-        <span>BREAKING NEWS ALERT</span>
-        <span class="breaking-dot"></span>
       </div>
 
-      <div class="celebration-headline">
-        🎉 BREAKING NEWS! VINOY SIR HAS MADE HISTORY! 🎉
-      </div>
-
-      <p class="celebration-message">
-        Lavanya's laptop request has officially been approved. Productivity levels are expected to reach unprecedented heights.
-      </p>
-
-      <!-- Official Requisition Certificate Box -->
-      <div class="certificate-box" id="certificateBox">
-        <div class="cert-border-inner">
-          <div class="cert-header">
-            <div class="cert-seal">🎖️</div>
-            <div class="cert-title">EXECUTIVE HARDWARE RELEASE ORDER</div>
-            <div class="cert-subtitle">Official Authorization Certificate</div>
-          </div>
-          
-          <div class="cert-body">
-            <p>This certifies that by the supreme and gracious decree of:</p>
-            <h4 class="cert-manager-name">MANAGER VINOY SIR</h4>
-            <p>Full executive approval and blessing have been granted to:</p>
-            <h4 class="cert-recipient-name">LAVANYA</h4>
-            <p>For the immediate procurement and assignment of:</p>
-            <div class="cert-asset-badge">💻 1 HIGH-PERFORMANCE WORK LAPTOP</div>
-            
-            <div class="cert-footer-row">
-              <div class="cert-field">
-                <span class="c-label">ORDER ID:</span>
-                <span class="c-val">VIN-HERO-APPROVED-2026</span>
-              </div>
-              <div class="cert-field">
-                <span class="c-label">STATUS:</span>
-                <span class="c-val text-success">OFFICIALLY APPROVED</span>
-              </div>
-              <div class="cert-field">
-                <span class="c-label">DATE:</span>
-                <span class="c-val" id="certDateVal">TODAY</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="celebration-actions">
-        <button class="btn btn-primary" onclick="printCertificate()">
-          🖨️ Print / Save Official Order
+      <div class="celebrate-actions">
+        <button class="cartoon-btn" style="padding: 12px 28px; font-size: 1rem;" onclick="celebrateAgain()">
+          <span>🎉 MORE CONFETTI!</span>
         </button>
-        <button class="btn btn-emerald" onclick="celebrateAgain()">
-          🎉 More Confetti!
+        <button class="cartoon-btn" style="background: linear-gradient(135deg, #118ab2, #06d6a0); padding: 12px 28px; font-size: 1rem;" onclick="shareWithVinoySir()">
+          <span>👑 SHARE ROYAL DECREE</span>
         </button>
-        <button class="btn btn-outline" onclick="copyReceiptLink()">
-          📋 Copy Approval Receipt
-        </button>
-      </div>
-      <div class="copy-alert-msg" id="copyAlertMsg">Receipt text copied to clipboard! Share it with Vinoy Sir!</div>
-    </div>
-  </div>
-
-  <!-- MODAL: "I Need More Time" Popup -->
-  <div class="modal-overlay" id="moreTimeModal">
-    <div class="modal-backdrop" onclick="closeMoreTimeModal()"></div>
-    <div class="modal-card more-time-card">
-      <div class="plea-emoji-wrapper">
-        <span class="crying-emoji">😭</span>
-      </div>
-
-      <h3 class="more-time-headline">
-        Sir, respectfully, how much more time does a laptop need to be approved? 😭
-      </h3>
-
-      <p class="more-time-body">
-        The servers are shivering in the corner. The keyboards are crying out for keystrokes. Colleague Deepak is actively asking for his laptop back right this second!
-      </p>
-
-      <div class="humorous-quote-callout">
-        "Every second Vinoy Sir ponders, another piece of world-changing code remains unwritten."
-      </div>
-
-      <!-- Escalation choices -->
-      <div class="more-time-choices">
-        <button class="btn btn-emerald pulse-btn full-width" onclick="handleApproveFromModal()">
-          ✅ You are 100% right. I APPROVE NOW!
-        </button>
-        <button class="btn btn-secondary full-width" id="stillNeedTimeBtn" onclick="handleStillNeedTime()">
-          🥺 I STILL need 30 seconds to think...
+        <button class="quest-sound-btn" style="padding: 8px 18px; font-size: 0.95rem;" onclick="closeQuestCelebrationModal()">
+          Close
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Full-Screen Canvas for Confetti -->
-  <canvas id="confettiCanvas"></canvas>
+  <!-- ======================================================================
+       MODAL 2: The Pleading Reaction (On "LET ME THINK...")
+       ====================================================================== -->
+  <div class="quest-modal-overlay" id="questThinkModal">
+    <div class="quest-modal-card">
+      <div class="pleading-laptop-box">🥺💧</div>
 
-  <script src="app.js"></script>
+      <h2 class="think-modal-heading">
+        Sir, even the laptop is waiting for your answer. 🥺
+      </h2>
+
+      <p class="think-modal-body">
+        The keys are trembling, the processor is sighing, and Lavanya's cardboard laptop is losing structural integrity!
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: center;">
+        <button class="btn-quest-yes" style="width: 100%; font-size: 1.25rem;" onclick="handleApproveFromThink()">
+          <span>YES! I WON'T KEEP IT WAITING! 💻</span>
+        </button>
+        <button class="quest-sound-btn" onclick="closeQuestThinkModal()">
+          Let me look at the 3D laptop again...
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-Screen Confetti Canvas -->
+  <canvas id="questConfettiCanvas"></canvas>
+
+  <!-- Scripts -->
+  <script src="quest-3d.js"></script>
+  <script src="quest-app.js"></script>
 </body>
 </html>
-
